@@ -1,34 +1,995 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page - Anime Gallery</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>Anime Gallery</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
     <header>
-        <a href="#" class="logo"><i class="fas fa-infinity"></i> Anime Gallery</a>
+
+        <a href="#" class="logo"><i class="fas fa-infinity"></i>Anime Gallery</a>
+
+        <nav class="navbar">
+             <a href="index.html">Home</a>
+             <a href="#anime">Anime</a>
+             <a href="#action">Action</a>
+             <a href="#child">Kids</a>
+             <a href="#family">Love</a>
+             <a href="#contact">Contact</a>
+             <a href="main.html" onclick="logoutUser()">Logout</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+
     </header>
 
-    <header-button>
-    <div class="content">
-        <h1>
-            <span style="color: rgb(53, 53, 53);">Welcome</span> to Anime Gallery
-        </h1>
-        <div class="button-container">
-            <a href="login.html" class=" btn-login">Login</a>
-            <a href="register.html" class=" btn-register">Register</a>
+
+<div class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box " style="background: url(img/Luffy.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>One Piece</h3>
+                        <p>One Piece is about Monkey D. Luffy and his pirate crew searching for the "One Piece" to become the next King of the Pirates.</p>
+                        <a href="Play/OnePiece.html?anime=onepiece" class="btn" >Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box second" style="background: url(img/NARUTO.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Naruto</h3>
+                         <p>Guided by the spirit demon within him, orphaned Naruto learns to harness his powers as a ninja in this anime adventure series.</p>
+                        <a href="Play/Naruto.html?index.html?anime=naruto" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box " style="background: url(img/Ichigo.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Bleach</h3>
+                         <p>Bleach is an anime series about a high school student who gains the powers of a Soul Reaper and must maintain balance between the living and the dead.</p>
+                        <a href="Play/Bleach.html?index.html?anime=bleach" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box " style="background: url(img/Goku.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Dragon Ball Z</h3>
+                        <p>Dragon Ball Z is an anime series about the adventures of Son Goku and his companions as they defend Earth from villains using the power of the Dragonballs.</p>
+                        <a href="Play/Dragon.html?index.html?anime=dragonballz" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<section class="anime" id="anime-section">
+
+    <h1 class="heading">Popular Anime</h1>
+
+    <div class="swiper anime-slider">
+
+        <div class="swiper-wrapper" id="anime-section">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Naruto2.jpg" alt="Naruto Shippuden">
+                    <div class="content">
+                        <h3>Naruto Shippuden</h3>
+                        <!-- <p>Guided by the spirit demon within him, orphaned Naruto learns to harness his powers as a ninja in this anime adventure series.</p> -->
+                            <a href="Play/popular/shippuden.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Death Note.jpg" alt="Death Note">
+                    <div class="content">
+                        <h3>Death Note</h3>
+                        <!-- <p>Death Note is an anime series about a high school student who finds a notebook that can kill anyone whose name is written in it.</p> -->
+                            <a href="Play/popular/Death.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/One Punch Man.jpg" alt="One Punch Man">
+                    <div class="content">
+                        <h3>One Punch Man</h3>
+                        <!-- <p>One-Punch Man is an action, comedy, and animation series about a superhero who can defeat his enemies with a single punch.</p> -->
+                            <a href="Play/popular/onepunch.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/My Hero Academia.jpg" alt="My Hero Academia">
+                    <div class="content">
+                        <h3>My Hero Academia</h3>
+                    <!-- <p>My Hero Academia is an anime series about a boy who dreams of becoming a superhero despite not having superpowers.</p> -->
+                    <a href="Play/popular/hero.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Black Clover.jpeg" alt="Black Clover">
+                    <div class="content">
+                        <h3>Black Clover</h3>
+                        <!-- <p>A young boy who was born without magic powers but strives to become the Wizard King, the most powerful mage in his kingdom.</p> -->
+                            <a href="Play/popular/blackclover.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Baki Hanma.jpg" alt="Baki Hanma">
+                    <div class="content">
+                        <h3>Baki Hanma</h3>
+                        <!-- <p>While martial arts champion Baki Hanma trains hard to surpass his legendary father, five violent death row inmates descend upon.</p> -->
+                            <a href="Play/popular/baki.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Kengan.png" alt="Kengen Ashura">
+                    <div class="content">
+                        <h3>Kengan Ashura</h3>
+                        <!-- <p>Kengan Association represent corporations in illegal underground fight rings in order to resolve conflicts b/w companies over contracts.</p> -->
+                            <a href="Play/popular/kengen.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Hunter.jpg" alt="Hunter x Hunter">
+                    <div class="content">
+                        <h3>Hunter x Hunter</h3>
+                        <!-- <p>Hunter x Hunter is an anime television series that follows Gon Freecss, a young boy who sets out to become a Hunter and search for his father.</p> -->
+                            <a href="Play/popular/hunter.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Haikyuu.jpg" alt="Haikyu!!">
+                    <div class="content">
+                        <h3>Haikyu!!</h3>
+                        <!-- <p> Shoyo Hinata, becomes obsessed with volleyball after catching a glimpse of Karasuno High School playing in the Nationals on TV.</p> -->
+                            <a href="Play/popular/haikyuu.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Tokyo.jpg" alt="Tokyo Revengers">
+                    <div class="content">
+                        <h3>Tokyo Revengers</h3>
+                        <!-- <p>The leader of Tokyo Manji Gang, also known as Toman, nicknamed Mikey. A gang known for it honorable ideals and beliefs.</p> -->
+                            <a href="Play/popular/tokyo.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Demon Slayer.png" alt="Demon Slayer">
+                    <div class="content">
+                        <h3>Demon Slayer</h3>
+                        <!-- <p>Demon Slayer is an anime series about a boy who becomes a demon slayer to avenge his family and cure his sister from demon possesion.</p> -->
+                            <a href="Play/popular/demon.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/JJK.jpg" alt="Jujutsu Kaisen">
+                    <div class="content">
+                        <h3>Jujutsu Kaisen</h3>
+                        <!-- <p>Jujutsu Kaisen revolves around a world of sorcerers recruited to exorcise curses in popular places and kill them by using cursed weapons.</p> -->
+                            <a href="Play/popular/jjk.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/popular/Chainsaw.jpg" alt="Chainsaw Man">
+                    <div class="content">
+                        <h3>Chainsaw Man</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/popular/chainsaw.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
-    </header-button>
+</section>
+
+
+<section class="action" id="action-section">
+    <h1 class="heading">Popular on Action</h1>
+    <div class="swiper action-slider">
+        <div class="swiper-wrapper" id="action-section">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Hell.jpeg" alt="Hell Paradise">
+                    <div class="content">
+                        <h3>Hell Paradise</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/paradise.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/spy.png" alt="Spy x Family">
+                    <div class="content">
+                        <h3>Spy x Family</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/spy.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/AOT.png" alt="Attack on Titan">
+                    <div class="content">
+                        <h3>Attack on Titan</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/AOT.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Wind.jpg" alt="Wind Breaker">
+                    <div class="content">
+                        <h3>Wind Breaker</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/wind.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/seven.jpeg" alt="The Seven Deadly Sins">
+                    <div class="content">
+                        <h3>The Seven Deadly Sins</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/seven.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Saga.jpg" alt="Vinland Saga">
+                    <div class="content">
+                        <h3>Vinland Saga</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/vinland.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Assassination.jpeg" alt="Assassination Classroom">
+                    <div class="content">
+                        <h3>Assassination Classroom</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/assassination.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/hajime.jpg" alt="Hajime no ippo">
+                    <div class="content">
+                        <h3>Hajime no ippo</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/hajime.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/ragnarok.jpg" alt="Record of Ragnarok">
+                    <div class="content">
+                        <h3>Record of Ragnarok</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/ragnarok.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Kuroko.jpg" alt="Kuroko no basketball">
+                    <div class="content">
+                        <h3>Kuroko no basketball</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/kuroko.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Jojo.jpeg" alt="Jojo's Bizarre Adventur">
+                    <div class="content">
+                        <h3>Jojo's Bizarre Adventure</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/jojo.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/Ghoul.jpg" alt="Tokyo Ghoul">
+                    <div class="content">
+                        <h3>Tokyo GhoulS</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/ghoul.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/action/blue.jpeg" alt="Blue Lock">
+                    <div class="content">
+                        <h3>Blue Lock</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/lock.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+          
+    </div>
+
+</section>
+
+<section class="child" id="child-section">
+    <h1 class="heading">Kids Movies</h1>
+    <div class="swiper child-slider">
+        <div class="swiper-wrapper" id="child-section">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Ponyo.jpg" alt="Ponyo">
+                    <div class="content">
+                        <h3>Ponyo</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/ponyo.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Bunny Drop.jpeg" alt="Usagi Drop">
+                    <div class="content">
+                        <h3>Usagi Drop</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/usagi.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Babysitters.jpg" alt="School Babysitters">
+                    <div class="content">
+                        <h3>School Babysitters</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/babysitter.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Delico.png" alt="Delico's Nursery">
+                    <div class="content">
+                        <h3>Delico's Nursery</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/nursery.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Tadaima.jpg" alt="Tadaima ,Okarei">
+                    <div class="content">
+                        <h3>Tadaima ,Okarei</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/tadaima.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Spy.png" alt="Spy x Family">
+                    <div class="content">
+                        <h3>Spy x Family</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/action/spy.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Pokemon.jpg" alt="Pokemon Go">
+                    <div class="content">
+                        <h3>Pokemon Go</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/pokemon.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Totoro.jpeg" alt="My Neighbor Totoro">
+                    <div class="content">
+                        <h3>My Neighbor Totoro</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/totoro.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Chibi.jpg" alt="Chibi Maruko-chan">
+                    <div class="content">
+                        <h3>Chibi Maruko-chan</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/chibi.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Blue.jpg" alt="Blue Archive">
+                    <div class="content">
+                        <h3>Blue Archive</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/archive.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Spirited.jpg" alt="Spirited Away">
+                    <div class="content">
+                        <h3>Spirited Away</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/spirited.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/child/Drifting.jpg" alt="Drifting Hom">
+                    <div class="content">
+                        <h3>Drifting Home</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/kids/drifting.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="family" id="family-section">
+    <h1 class="heading">Love Movies</h1>
+    <div class="swiper family-slider">
+        <div class="swiper-wrapper" id="family-section">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Your.png" alt="Your Name">
+                    <div class="content">
+                        <h3>Your Name</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/name.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Silent.jpg" alt="A Silent Voice">
+                    <div class="content">
+                        <h3>A Silent Voice</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/silent.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Weather.jpg" alt="Weathering With You">
+                    <div class="content">
+                        <h3>Weathering With You</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/weathering.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Josee.jpg" alt="Josee, The Tiger And The Fish">
+                    <div class="content">
+                        <h3>Josee, The Tiger And The Fish</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/josee.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/want.jpg" alt="I Want to Eat Your Pancreas">
+                    <div class="content">
+                        <h3>I Want to Eat Your Pancreas</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/pancreas.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/whisper.png" alt="Whisper of the Heart">
+                    <div class="content">
+                        <h3>Whisper of the Heart</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/whisper.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/wind.jpg" alt="The Wind Rises">
+                    <div class="content">
+                        <h3>The Wind Rises</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/wind.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Girl.jpg" alt="The Girl Who Leapt Through Time">
+                    <div class="content">
+                        <h3>The Girl Who Leapt Through Time</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/girl.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Garden.jpg" alt="CThe Garden of Words">
+                    <div class="content">
+                        <h3>The Garden of Words</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/garden.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Second.jpg" alt="5 Centimeters Per Second">
+                    <div class="content">
+                        <h3>5 Centimeters Per Second</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/centimeters.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/whisker.jpg" alt="A Whisker Away">
+                    <div class="content">
+                        <h3>A Whisker Away</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/whisker.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="img/love/Anthem.jpg" alt=" The Anthem of the Heart">
+                    <div class="content">
+                        <h3> The Anthem of the Heart</h3>
+                        <!-- <p>Chainsaw Man is an anime series based on the manga of the same name by Tatsuki Fujimoto that follows the Denji making contract with the devils.</p> -->
+                            <a href="Play/love/anthem.html" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<h2 class="logo-title">Paid & Free Websites</h2>
+<p class="websites-para">From here we can access these websites Easily by clicking on them</p>
+
+<section class="wesites" id="websites">
+<div class="swiper-container website-slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="https://www.crunchyroll.com" target="_blank">
+                <img src="img/crunchyroll.png" alt="Crunchyroll">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://hianime.to/" target="_blank">
+                <img src="img/hianime.png" alt="hi anime">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://9anime.org.lv/" target="_blank">
+                <img src="img/9anime.jpg" alt="9 Anime">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://www.netflix.com" target="_blank">
+                <img src="img/netflix.png" alt="netflix">
+            </a>
+        </div>
+        <div class="swiper-slide zoro">
+            <a href="https://zorotv.com.in/" target="_blank">
+                <img src="img/zoro.to.jpg" alt="Zoro.to">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://www.disneyplus.com" target="_blank">
+                <img src="img/disney.png" alt="disney">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://www.primevideo.com/region/eu/" target="_blank">
+                <img src="img/prime.png" alt="prime">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://www.hulu.com" target="_blank">
+                <img src="img/hulu.png" alt="hulu">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://www.youtube.com" target="_blank">
+                <img src="img/youtube.png" alt="youtube">
+            </a>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</section>
+
+<h2>Submit Your Review</h2>
+    <form id="reviewForm">
+        <input type="hidden" name="username" value="{{ username }}">
+
+        <label for="anime_name">Anime Name:</label>
+        <input type="text" name="anime_name" id="anime_name" required>
+
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+            <option value="anime">Anime</option>
+            <option value="action">Action</option>
+            <option value="family">Family</option>
+            <option value="children">Children</option>
+        </select>
+
+        <label for="review_comment">Review:</label>
+        <textarea name="review_comment" id="review_comment" required></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="reviews-container">
+        <h3>Latest Reviews</h3>
+        <div id="reviewsList">
+            {% for review in reviews %}
+                <div class="review">
+                    <p><strong>{{ review.username }}</strong> reviewed <em>{{ review.anime_name }}</em>:</p>
+                    <p>Category: {{ review.category }}</p>
+                    <p>{{ review.review_comment }}</p>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+<h1 class="sub-title">Contact</h1>
+
+<div id="contact">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="contact-left">
+
+                <h1 class="main-title">Contact Details</h1>
+                <p><i class="fa-solid fa-envelope"></i> animegallery.mail@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +918555990992</p>
+              
+                <div class="social-icons">
+                    <h1 class="main-title-2">Social Media</h1>
+                    <a target="_blank" href="https://www.facebook.com/anand.mutyalu/"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                    <a target="_blank" href=""><i class="fa-brands fa-twitter"></i>Twitter</a>
+                    <a target="_blank" href="https://www.instagram.com/_anand_akana_/"><i class="fa-brands fa-instagram"></i></i>Instagram</a>
+                </div>
+
+            </div>
+
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="1" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script>
+        let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+  menu.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
+}
+
+
+var swiper = new Swiper(".home-slider", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 6500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop:true,
+  });
+
+  var swiper = new Swiper(".anime-slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 4100,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop:true
+  });
+
+  var swiper = new Swiper(".action-slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3300,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop:true
+  });
+
+
+  var swiper = new Swiper(".child-slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2700,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop:true
+  });
+
+  var swiper = new Swiper(".family-slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop:true
+  });
+
+  var swiper = new Swiper(".website-slider", {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop: true,
+  });
+
+// Handle review form submission with JavaScript
+document.getElementById('reviewForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    const username = formData.get('username');
+    const anime_name = formData.get('anime_name');
+    const category = formData.get('category');
+    const review_comment = formData.get('review_comment');
+
+    const reviewData = {
+        username: username,
+        anime_name: anime_name,
+        category: category,
+        review_comment: review_comment
+    };
+
+    console.log("Sending review data:", reviewData); // Debug: log the data sent
+
+    fetch('/submit_review', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewData) // Make sure to serialize the data as JSON
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            location.reload();  // Reload the page to display the new review
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding review');
+    });
+});
+
+
+// // Example of displaying animes on the user dashboard
+// fetch('http://localhost:3000/api/get-animes?category=anime')
+//     .then(response => response.json())
+//     .then(data => {
+//         // Render the animes to the page
+//         data.forEach(anime => {
+//             const animeElement = document.createElement('div');
+//             animeElement.classList.add('anime-box');
+//             animeElement.innerHTML = `
+//                 <img src="http://localhost:3000${anime.image_url}" alt="${anime.title}">
+//                 <h3>${anime.title}</h3>
+//                 <a href="${anime.link}" class="btn">Watch</a>
+//             `;
+//             document.querySelector('.anime-slider').appendChild(animeElement);
+//         });
+//     })
+//     .catch(error => {
+//         console.error('Error fetching animes:', error);
+//     });
+
+
+// // Fetch anime for each category when the page loads
+// window.onload = function() {
+//     ['anime', 'action', 'child', 'family'].forEach(category => {
+//         fetchAnimeByCategory(category);
+//     });
+// };
+
+
+</script>
+
 </body>
-
 </html>
-
-
-
