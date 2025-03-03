@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Login - Anime Gallery</title>
+
+    <link rel="stylesheet" href="login.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-infinity"></i>Anime Gallery</a>
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box Login active">
+            <h2 class="form-title">Login</h2>
+
+            <form id="loginForm">
+                <div class="input-box">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+
+                <div class="input-box input-box-inline">
+                    <label for="role-login">Login as:</label>
+                    <select id="role-login" name="role" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="login-register">
+                    <p>Don't have an account? <a href="register.html" class="register-link">Register</a></p>
+                </div>
+
+                <div id="errorMessage" style="display:none; color:red; text-align:center; margin-top:10px;">
+                    Invalid credentials
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="welcomeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="tick-animation">
+                <dotlottie-player src="https://lottie.host/4233b761-aaac-40b8-a65a-de9dad61ee51/MGcXYvjNpi.lottie" 
+                background="transparent" 
+                speed="1.3"
+                style="width: 100px; height: 100px" loop autoplay>
+            </dotlottie-player>
+            </div>
+            <h2><span style="color: rgb(53, 53, 53);">Welcome</span> to Anime Gallery</h2>
+            <p id="welcomeText"></p>
+            <button id="modalOkayButton">OK</button>
+        </div>
+    </div>
+
+    <div id="errorMessage" style="display: none; color: red; text-align: center; margin-top: 10px;">
+        Invalid credentials
+    </div>
+</form>
+
+
+
+    <script>
+            
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const role = document.getElementById('role-login').value;
+    const email = document.querySelector('.form-box.Login input[name="email"]').value;
+    const password = document.querySelector('.form-box.Login input[name="password"]').value;
+
+    fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password, role })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const username = data.username; 
+            const role = data.role;
+
+            const modal = document.getElementById('welcomeModal');
+            const welcomeText = document.getElementById('welcomeText');
+            modal.style.display = 'flex';
+            welcomeText.textContent = `${role}, ${username}`;
+
+
+            const redirectTimeout = setTimeout(() => {
+                redirectToDashboard(role);
+            }, 7000);
+
+            document.getElementById('modalOkayButton').addEventListener('click', () => {
+                clearTimeout(redirectTimeout);
+                redirectToDashboard(role);
+            });
+
+            function redirectToDashboard(role) {
+                modal.style.display = 'none';
+                if (role === 'user') {
+                    window.location.href = 'user-dashboard.html';
+                } else if (role === 'admin') {
+                    window.location.href = 'admin-dashboard.html';
+                }
+            }
+        } else {
+            alert(data.message || 'Invalid credentials');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred during login.');
+    });
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+

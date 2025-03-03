@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("illustration-anime-city.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("illustration-anime-city.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    text-decoration: none;
+    width: 220px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo i {
+    color: red;
+    margin-right: 8px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.content h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-register {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background: #ff0000;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    transition: background-color 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
+}
+
+.btn-register:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: scale(1.02);
+}
+
+.btn-login {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #000000;
+    background: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    transition: background-color 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
+}
+
+.btn-login:hover {
+    background: #ff0000;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background: #162938;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #1a3c4a;
+}
+
+header-button{
+    width: 550px;
+    height: 140px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+}

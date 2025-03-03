@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Garden of Words</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="love.css">
+
+
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fas fa-infinity"></i>Anime Gallery</a>
+        <nav class="navbar">
+             <a href="index.html">home</a>
+             <a href="#anime">anime</a>
+             <a href="#action">action</a>
+             <a href="#child">child</a>
+             <a href="#family">Love</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+
+        <div class="swiper home-slider">
+    
+            <div class="swiper-wrapper">
+    
+                <div class="swiper-slide">
+                    <div class="box " style="background: url(img/Garden2.jpg) no-repeat;">
+                        <div class="content">
+                            <h3>The Garden of Words</h3>
+                            <p>The Garden of Words is a 2013 anime film about a 15-year-old aspiring shoemaker who meets a mysterious woman in a Tokyo garden and they develop feelings for each other.</p>
+                            <a href="#" class="btn trailer-btn" data-video="https://www.youtube.com/embed/Pi_sIP-wjC0">Trailer</a>
+                            <a href="https://9anime.org.lv/anime/bleach/" class="btn" target="_blank">9 Anime</a>
+                            <a href="Play/OnePiece.html" class="btn" target="_blank">Zoro.to</a>
+                            <a href="https://www.crunchyroll.com/series/G63VGG2NY/bleach" class="btn" target="_blank">Crunchyroll</a>
+                            <a href="https://hianime.to/watch/bleach-806?ep=13793" class="btn" target="_blank">Hi anime</a>
+                            <a href="https://aniwatch.lv/anime/bleach-2004/" class="btn" target="_blank">aniwatch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="modal" style="display: none;">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <form id="reviewForm">
+        <textarea id="reviewText" placeholder="Write your anime review here..."></textarea>
+        <button type="button" onclick="submitReview()">Submit Review</button>
+      </form>
+      <p id="sentimentResult"></p>
+
+      <div id="pastReviews">
+        <h2>Past Reviews</h2>
+    
+    </div>
+
+ 
+    <script src="love.js"></script>
+
+</body>
+</html>

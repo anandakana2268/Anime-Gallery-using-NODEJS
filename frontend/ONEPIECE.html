@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One Piece Anime</title>
+    <link rel="stylesheet" href="anime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="anime-info">
+            <div class="anime-left">
+                <img src="One Piece.jpg" alt="One Piece">
+                <div class="rating">
+                    <p>Rating 8.72</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <a href="#" class="btn-1 trailer-btn" data-video="https://www.youtube.com/embed/MCb13lbVGE0">Trailer</a>
+                <button class="bookmark-btn" id="wishlist-button">
+                    <i class="fas fa-heart" id="fa-heart"></i> Likes
+                </button>
+                
+                <p id="wishlist-count">Liked by 150 users</p>
+            </div>
+            <div class="anime-right">
+                <h1>One Piece</h1>
+                <p>Watch full episodes of One Piece, download One Piece English subbed and dubbed.</p>
+                <ul>
+                    <li><strong>Status:</strong> Ongoing</li>
+                    <li><strong>Studio:</strong> Toei Animation</li>
+                    <li><strong>Released:</strong> 1999</li>
+                    <li><strong>Duration:</strong> 24 min. per ep.</li>
+                    <li><strong>Episodes:</strong> 1070+ (and counting)</li>
+                    <li><strong>Genre:</strong> Action, Adventure, Fantasy</li>
+                </ul>
+
+                <h2>Synopsis</h2>
+                <p>The story follows Monkey D. Luffy, a young pirate with the ability to stretch his body like rubber after eating a Devil Fruit. He sets off on a journey with his crew to find the legendary One Piece and become the Pirate King.</p>
+
+                <section class="home" id="home">
+                    <div class="swiper home-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="box" style="background: url(img/One\ Piece.jpg) no-repeat;">
+                                    <div class="button-container">
+                                        <a href="https://9anime.org.lv/anime/one-piece/" class="btn" target="_blank">9 Anime</a>
+                                        <a href="https://zorotv.com.in/anime/one-piece-bgf/" class="btn" target="_blank">Zoro.to</a>
+                                        <a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" class="btn" target="_blank">Crunchyroll</a>
+                                        <a href="https://hianime.to/watch/one-piece-100?ep=2142" class="btn" target="_blank">Hi anime</a>
+                                        <a href="https://aniwatch.lv/anime/one-piece-1999/" class="btn" target="_blank">Aniwatch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal" style="display: none;">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="reviewContainer">
+        <form id="reviewForm">
+            <textarea id="reviewText" placeholder="Write about Anime here..."></textarea>
+            <div class="star-rating">
+                <label>
+                    <input type="radio" name="rating" value="1">
+                    <span>★</span>
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="2">
+                    <span>★</span>
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="3">
+                    <span>★</span>
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="4">
+                    <span>★</span>
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="5">
+                    <span>★</span>
+                </label>
+            </div>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+        <div id="reviews"></div>
+    </div>
+    
+
+    <div class="reviews-container">
+        <h2>Reviews</h2>
+        <div class="reviews-scroll">
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>Username</h3>
+                    <div class="star-rating">
+                        <span>★★★★☆</span> 
+                    </div>
+                </div>
+                <p class="review-text">This is an example of a review comment that a user might leave. The anime is fantastic!</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        document.querySelector(".bookmark-btn").addEventListener("click", function() {
+    const icon = document.getElementById("fa-heart");
+    icon.classList.toggle("active");
+});
+
+const trailerButtons = document.querySelectorAll('.trailer-btn');
+
+
+trailerButtons.forEach(button => {
+    button.onclick = function(event) {
+        event.preventDefault(); 
+        const modal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+
+
+        const videoUrl = button.getAttribute('data-video');
+        
+
+        videoFrame.src = videoUrl;
+        
+
+        modal.style.display = 'block';
+    };
+});
+
+
+document.querySelector('.close').onclick = function() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    
+
+    modal.style.display = 'none';
+    videoFrame.src = ''; 
+};
+
+
+window.onclick = function(event) {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        videoFrame.src = ''; 
+    }
+};
+
+function submitReview() {
+    let reviewText = document.getElementById('reviewText').value;
+    let rating = document.querySelector('input[name="rating"]:checked')?.value;
+
+    if (!reviewText || !rating) {
+        alert("Please write a review and select a rating before submitting!");
+        return;
+    }
+
+    fetch('http://127.0.0.1:5000/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ review: reviewText, rating: parseInt(rating) })  // Ensure rating is sent as integer
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(`Sentiment Analyzed: ${data.sentiment}`);
+        document.getElementById('reviewText').value = '';
+        document.querySelector('input[name="rating"]:checked').checked = false;
+        displayReviews(); // Refresh the displayed reviews
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function displayReviews() {
+    fetch('http://127.0.0.1:5000/reviews')
+        .then(response => response.json())
+        .then(data => {
+            const reviewsContainer = document.querySelector('.reviews-scroll');
+            reviewsContainer.innerHTML = '';
+
+            data.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.classList.add('review-card');
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <h3>Anonymous User</h3>
+                        <div class="star-rating">
+                            ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                        </div>
+                    </div>
+                    <p class="review-text">${review.text}</p>
+                    <p>Sentiment: ${review.sentiment}</p>
+                `;
+                reviewsContainer.appendChild(reviewCard);
+            });
+        })
+        .catch(error => console.error('Error fetching reviews:', error));
+}
+
+document.addEventListener('DOMContentLoaded', displayReviews);
+    </script>
+</body>
+</html>
+

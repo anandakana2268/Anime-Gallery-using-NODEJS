@@ -1,0 +1,34 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "anime_gallery",
+            "database": "anime_gallery",
+            "username": "root",
+            "password": "2268@Anand",
+            "connectionTimeout": 50
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "anime",
+            "database": "anime_gallery",
+            "username": "anand_akana",
+            "password": "2268Anand",
+            "connectionTimeout": 50
+        }
+    ]
+}

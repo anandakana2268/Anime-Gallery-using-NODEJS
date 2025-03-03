@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-infinity"></i>Anime Gallery</a>
+        <nav class="navbar">
+        <a class="logout-btn" href="main.html" onclick="logoutUser()">Logout</a>
+        </nav>
+    </header>
+
+    <h1>Admin Dashboard</h1>
+
+    <section class="table-form">
+        <h2>Manage Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="users-table">
+                
+            </tbody>
+        </table>
+    </section>
+
+    <section class="add-anime">
+        <h2>Add Anime</h2>
+        <form id="addAnimeForm" enctype="multipart/form-data">
+            <input type="text" id="animeTitle" placeholder="Title" required />
+            <input type="text" id="animeLink" placeholder="Watch Link" required />
+            <select id="animeCategory" required>
+                <option value="anime">Anime</option>
+                <option value="action">Action</option>
+                <option value="child">Child</option>
+                <option value="family">Family</option>
+            </select>
+            <input type="file" id="animeImage" name="animeImage" accept="image/*" required />
+            <button class="form-button" type="submit">Add Anime</button>
+        </form>
+    </section>
+
+    <section class="manage-animes">
+        <h2>Manage Added Animes</h2>
+        <div id="anime-container"></div>
+    </section>
+
+    <script>
+async function loadUsers() {
+            const response = await fetch('http://localhost:3000/api/users');
+            const data = await response.json();
+            const usersTable = document.getElementById('users-table');
+            usersTable.innerHTML = '';
+            data.users.forEach(user => {
+                const userRow = document.createElement('tr');
+                userRow.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.email}</td>
+                    <td>${user.role}</td>
+                    <td>
+                        <button onclick="deleteUser(${user.id})">Remove</button>
+                        <button onclick="toggleAdmin(${user.id}, '${user.role}')">
+                            ${user.role === 'admin' ? 'Demote' : 'Promote'}
+                        </button>
+                    </td>
+                `;
+                usersTable.appendChild(userRow);
+            });
+        }
+
+        async function deleteUser(userId) {
+            const response = await fetch(`http://localhost:3000/api/users/${userId}`, { method: 'DELETE' });
+            const result = await response.json();
+            if (result.success) {
+                alert('User deleted successfully.');
+                loadUsers();
+            } else {
+                alert('Failed to delete user.');
+            }
+        }
+
+        async function toggleAdmin(userId, currentRole) {
+            const newRole = currentRole === 'admin' ? 'user' : 'admin';
+            const response = await fetch(`http://localhost:3000/api/users/${userId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ role: newRole }),
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert(`User role updated to ${newRole}`);
+                loadUsers();
+            } else {
+                alert('Failed to update role.');
+            }
+        }
+
+
+        document.getElementById('addAnimeForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const title = document.getElementById('animeTitle').value;
+            const link = document.getElementById('animeLink').value;
+            const category = document.getElementById('animeCategory').value;
+            const image = document.getElementById('animeImage').files[0];
+
+            const formData = new FormData();
+            formData.append('animeTitle', title);
+            formData.append('animeLink', link);
+            formData.append('animeCategory', category);
+            formData.append('animeImage', image);
+
+            const response = await fetch('http://localhost:3000/api/add-anime', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (result.message) {
+                alert('Anime added successfully');
+                loadAnimes();  // Reload the anime list
+            } else {
+                alert('Failed to add anime');
+            }
+        });
+
+        function addAnime() {
+  const newAnime = {
+    title: document.getElementById('anime-title').value,
+    category: document.getElementById('anime-category').value,
+    image: document.getElementById('anime-image').value,
+    link: document.getElementById('anime-link').value
+  };
+
+  fetch('/api/animes', {
+     method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+    },
+        body: JSON.stringify(newAnime)
+    })
+        .then(response => response.json())
+        .then(() => {
+    // After adding anime, fetch and display the updated list
+        fetchAnimes();
+     })
+        .catch(error => console.error('Error adding anime:', error));
+    }
+
+
+        async function loadAnimes() {
+            const response = await fetch('http://localhost:3000/api/get-animes');
+            const animes = await response.json();
+            const animeContainer = document.getElementById('anime-container');
+            animeContainer.innerHTML = ''; // Clear anime list
+
+            animes.forEach(anime => {
+                const animeCard = document.createElement('div');
+                animeCard.innerHTML = `
+                    <img src="http://localhost:3000${anime.image_url}" alt="${anime.title}" />
+                    <h3>Anime Name: ${anime.title}</h3>
+                    <p>Category: ${anime.category}</p>
+                    <button onclick="deleteAnime(${anime.id})">Delete</button>
+                `;
+                animeContainer.appendChild(animeCard);
+            });
+        }
+
+        async function deleteAnime(animeId) {
+            const response = await fetch(`http://localhost:3000/api/delete-anime/${animeId}`, { method: 'DELETE' });
+            const result = await response.json();
+            if (result.message) {
+                alert('Anime deleted successfully');
+                loadAnimes();  // Reload anime list
+            } else {
+                alert('Failed to delete anime');
+            }
+        }
+
+        window.onload = () => {
+            loadUsers();
+            loadAnimes();
+        }
+    </script>
+</body>
+</html>
+
